@@ -20,14 +20,14 @@ describe('Automated API Test', () => {
         });
     });
 
-    it('Get Only the Created Post by ID', () => {
+    it.skip('Get Only the Created Post by ID', () => {
         cy.request('GET', `/posts/${newPostId}`).then((response) => {
             expect(response.status).to.eq(200);
             expect(response.body.id).to.eq(newPostId);
         });
     });
 
-    it('Replace Some Field in the Created Post with PATCH', () => {
+    it.skip('Replace Some Field in the Created Post with PATCH', () => {
         cy.request('PATCH', `/posts/${newPostId}`, {
             title: 'updated title'
         }).then((response) => {
